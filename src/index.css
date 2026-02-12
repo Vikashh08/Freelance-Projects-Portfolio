@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-dark-bg text-white font-dm overflow-x-hidden;
+  background-image:
+    linear-gradient(to bottom, rgba(5, 5, 5, 0.8), #050505),
+    radial-gradient(circle at 50% 0%, #2a0a2e 0%, transparent 60%),
+    radial-gradient(circle at 80% 10%, #0a2e2a 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+.glass-card {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl shadow-xl transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply bg-white/10 border-white/20;
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.15);
+  transform: translateY(-5px);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary font-bold;
+}
+
+.heading-font {
+  @apply font-outfit;
+}
+
+.btn-primary {
+  @apply px-8 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-white font-bold tracking-wide transition-all duration-300 transform hover:scale-105 relative overflow-hidden font-outfit;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 40px rgba(255, 0, 128, 0.6);
+}
+
+.btn-secondary {
+  @apply px-8 py-3 rounded-full border-2 border-secondary text-secondary font-bold tracking-wide hover:bg-secondary/10 transition-all duration-300 font-outfit;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FF0080, #7928CA);
+  border-radius: 9999px;
+  border: 2px solid #050505;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff3399, #9d4edd);
+}
