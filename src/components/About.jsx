@@ -56,7 +56,7 @@ export const About = () => {
 
                     <div className="space-y-8 text-xl md:text-2xl font-medium leading-relaxed text-gray-200">
                         <StaggeredParagraph
-                            text="I am Vibhor Dutta, a Computer Science Engineer obsessed with the intersection of AI, Hardware, and Human Interaction."
+                            text="I am Vibhor Dutta, a Computer Science Undergrad specializing in Artificial Intelligence, Machine Learning, and Data Science."
                             className="text-white"
                         />
                         <StaggeredParagraph
