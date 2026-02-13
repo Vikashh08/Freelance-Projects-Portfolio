@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaDownload } from "react-icons/fa";
 
 export const Hero = () => {
     return (
@@ -13,21 +13,25 @@ export const Hero = () => {
                 <motion.h1
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} // Apple-like ease
-                    className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-6"
+                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-6xl md:text-9xl font-bold tracking-tighter text-white mb-6"
                 >
-                    Pro. <span className="text-gray-500">Beyond.</span>
+                    Vibhor Dutta.
                 </motion.h1>
 
-                <motion.p
+                <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-xl md:text-3xl font-medium text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+                    className="mb-10 max-w-2xl mx-auto"
                 >
-                    Vibhor Dutta. AI Engineer. <br className="hidden md:block" />
-                    <span className="text-white">Designing the intelligence of tomorrow.</span>
-                </motion.p>
+                    <p className="text-xl md:text-3xl font-medium text-gray-400 leading-relaxed">
+                        AI Engineer specializing in <span className="text-white">Deep Learning</span>, <span className="text-white">Computer Vision</span>, and <span className="text-white">Embedded Systems</span>.
+                    </p>
+                    <p className="text-lg md:text-xl text-gray-500 mt-4">
+                        Transforming complex data into actionable intelligence.
+                    </p>
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -35,11 +39,15 @@ export const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="flex flex-col md:flex-row gap-6 justify-center items-center"
                 >
-                    <a href="#projects" className="px-8 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all text-sm md:text-base">
+                    <a href="#projects" className="px-8 py-3 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all text-sm md:text-base">
                         View Work
                     </a>
-                    <a href="#contact" className="text-blue-500 hover:text-blue-400 font-medium flex items-center gap-2 hover:underline underline-offset-4 text-sm md:text-base">
-                        Contact Me &gt;
+                    <a
+                        href="/resume.pdf"
+                        download="Vibhor_Dutta_Resume.pdf"
+                        className="px-8 py-3 rounded-full border border-gray-700 text-white font-medium hover:bg-white/10 transition-all text-sm md:text-base flex items-center gap-2"
+                    >
+                        Download Resume <FaDownload size={14} />
                     </a>
                 </motion.div>
             </div>
