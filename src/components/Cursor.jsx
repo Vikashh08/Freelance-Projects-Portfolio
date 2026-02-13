@@ -41,24 +41,27 @@ export const Cursor = () => {
             {/* Main Dot - High Contrast */}
             <div
                 id="cursor-dot"
-                className="fixed top-0 left-0 w-3 h-3 bg-secondary rounded-full pointer-events-none z-[9999] -ml-1.5 -mt-1.5 mix-blend-difference"
+                className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] -ml-1 -mt-1 mix-blend-difference"
                 style={{ willChange: "transform" }}
             />
 
-            {/* Trailing Circle - Smooth Animation */}
+            {/* Trailing Circle - Soft Glow Orb */}
             <motion.div
-                className="fixed top-0 left-0 w-10 h-10 border-2 border-primary rounded-full pointer-events-none z-[9998]"
+                className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9998]"
+                style={{
+                    background: "radial-gradient(circle, rgba(0, 255, 157, 0.4) 0%, rgba(255, 0, 255, 0) 70%)",
+                    filter: "blur(5px)",
+                }}
                 animate={{
-                    x: position.x - 20,
-                    y: position.y - 20,
-                    scale: isHovering ? 1.5 : 1,
-                    borderColor: isHovering ? "#00FFFF" : "#FF0080",
-                    backgroundColor: isHovering ? "rgba(0, 255, 255, 0.1)" : "transparent"
+                    x: position.x - 16,
+                    y: position.y - 16,
+                    scale: isHovering ? 2.5 : 1,
+                    opacity: isHovering ? 1 : 0.6,
                 }}
                 transition={{
                     type: "spring",
-                    stiffness: 200,
-                    damping: 20,
+                    stiffness: 150,
+                    damping: 15,
                     mass: 0.1
                 }}
             />

@@ -43,18 +43,18 @@ export const About = () => {
                     viewport={{ once: true }}
                 >
                     <h3 className="text-secondary font-fira text-lg mb-2">01. About Me</h3>
-                    <h2 className="text-4xl font-bold font-outfit text-white mb-6">
-                        Bridging the Gap Between <span className="text-gradient">Data & Design</span>
+                    <h2 className="text-4xl font-bold font-space text-white mb-6">
+                        Bridging the Gap Between <span className="text-gradient">Hardware & AI</span>
                     </h2>
 
                     <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                        I am a B.Tech CSE student specializing in Artificial Intelligence and Machine Learning.
-                        My journey started with a curiosity about how machines learn, which led me to build complex
-                        predictive models and distributed systems.
+                        I am a B.Tech Computer Science and Engineering student at Lovely Professional University.
+                        My passion lies in leveraging Artificial Intelligence and Machine Learning to solve real-world problems,
+                        from crop disease detection to smart hardware integration.
                     </p>
                     <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                        Beyond algorithms, I am deeply passionate about creating interfaces that make AI accessible.
-                        I believe the best technology is invisible – it just works, beautifully and efficiently.
+                        I enjoy working with Python, C++, and various AI frameworks. I'm also a team player with strong
+                        problem-solving skills and leadership qualities, always eager to learn and adapt to new technologies.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -64,7 +64,7 @@ export const About = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-neon-blue/30 hover:bg-white/10 transition-all cursor-default"
+                                className="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 hover:bg-white/10 transition-all cursor-default"
                             >
                                 <h4 className="text-white font-semibold mb-1">{feature.title}</h4>
                                 <p className="text-gray-500 text-sm">{feature.desc}</p>

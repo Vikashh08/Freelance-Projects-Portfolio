@@ -40,41 +40,36 @@ const SkillCategory = ({ title, skills }) => (
 export const Skills = () => {
     const categories = [
         {
-            title: "Languages & Core",
+            title: "Languages",
             skills: [
-                { name: "Python", level: 95 },
+                { name: "Python", level: 90 },
+                { name: "C", level: 85 },
                 { name: "C++", level: 85 },
-                { name: "Java", level: 80 },
-                { name: "JavaScript", level: 90 },
             ],
         },
         {
-            title: "AI & Machine Learning",
+            title: "Frameworks & Web",
             skills: [
-                { name: "TensorFlow", level: 85 },
-                { name: "PyTorch", level: 80 },
-                { name: "Scikit-Learn", level: 90 },
-                { name: "OpenCV", level: 75 },
-                { name: "NLP", level: 80 },
+                { name: "HTML", level: 95 },
+                { name: "CSS", level: 90 },
+                { name: "TensorFlow", level: 80 },
+                { name: "Keras", level: 75 },
             ],
         },
         {
-            title: "Web Development",
+            title: "Tools & Platforms",
             skills: [
-                { name: "React.js", level: 90 },
-                { name: "Node.js", level: 85 },
-                { name: "Tailwind CSS", level: 95 },
-                { name: "Next.js", level: 80 },
-                { name: "MongoDB", level: 85 },
+                { name: "VS Code", level: 95 },
+                { name: "GitHub", level: 90 },
+                { name: "Google Colab", level: 85 },
             ],
         },
         {
-            title: "Tools & Clouds",
+            title: "Soft Skills",
             skills: [
-                { name: "Git/GitHub", level: 90 },
-                { name: "Docker", level: 75 },
-                { name: "AWS", level: 70 },
-                { name: "Linux", level: 85 },
+                { name: "Problem Solving", level: 90 },
+                { name: "Team Player", level: 95 },
+                { name: "Leadership", level: 85 },
             ],
         },
     ];

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,12 +9,8 @@
 }
 
 body {
-  @apply bg-dark-bg text-white font-dm overflow-x-hidden;
-  background-image:
-    linear-gradient(to bottom, rgba(5, 5, 5, 0.8), #050505),
-    radial-gradient(circle at 50% 0%, #2a0a2e 0%, transparent 60%),
-    radial-gradient(circle at 80% 10%, #0a2e2a 0%, transparent 50%);
-  background-attachment: fixed;
+  @apply bg-black text-secondary font-inter antialiased selection:bg-accent/30 selection:text-white;
+  background-color: #000000;
 }
 
 .glass-card {

@@ -12,6 +12,8 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Cursor } from './components/Cursor';
 
+import { Education } from './components/Education';
+
 function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -38,6 +40,7 @@ function App() {
         <Projects />
         <Experience />
         <Achievements />
+        <Education />
         <Certifications />
         <Contact />
       </main>

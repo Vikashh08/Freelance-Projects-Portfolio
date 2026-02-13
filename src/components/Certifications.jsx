@@ -4,24 +4,24 @@ import { FaAward, FaExternalLinkAlt } from "react-icons/fa";
 
 const certifications = [
     {
-        title: "TensorFlow Developer Certificate",
-        issuer: "Google",
-        date: "Aug 2023",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg", // Placeholder logo
+        title: "Master Generative AI & Generative AI tools",
+        issuer: "Udemy",
+        date: "Aug '25", // Future date in resume? Keeping as is from resume text provided in prompt, or assuming it meant '24 or '23. Resume says '25. I'll stick to text.
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg",
         link: "#"
     },
     {
-        title: "AWS Certified Machine Learning - Specialty",
-        issuer: "Amazon Web Services",
-        date: "Dec 2023",
-        image: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+        title: "Build Generative AI Apps and Solutions with No-Code Tools",
+        issuer: "Udemy",
+        date: "Aug '25",
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg",
         link: "#"
     },
     {
-        title: "Deep Learning Specialization",
-        issuer: "Coursera (DeepLearning.AI)",
-        date: "June 2023",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png", // Generic placeholder
+        title: "ChatGPT-4 Prompt Engineering",
+        issuer: "Infosys",
+        date: "Aug '25",
+        image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg",
         link: "#"
     }
 ];

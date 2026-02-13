@@ -5,41 +5,21 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 const projects = [
     {
         id: 1,
-        title: "AI Chatbot Assistant",
+        title: "Crop Disease Detection Portal",
         category: "AI/ML",
-        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1000&auto=format&fit=crop",
-        description: "A context-aware AI chatbot using NLP and deep learning models to provide accurate customer support.",
-        tech: ["Python", "TensorFlow", "React", "FastAPI"],
-        github: "#",
+        image: "https://images.unsplash.com/photo-1595856552763-88229b4c09d0?q=80&w=1000&auto=format&fit=crop", // Crop/Sardine related placeholder
+        description: "Built a Crop Disease Detection Portal using ML (CNN-based image classification) that identifies plant diseases from real-time uploaded crop images with high accuracy. Integrated OpenCV for image preprocessing, TensorFlow/Keras for model training, and Gradio for seamless prediction on the web portal. Designed an interactive dashboard with disease insights, remedy suggestions, confidence scores, and image history tracking.",
+        tech: ["Gradio", "Google Colab", "Python", "TensorFlow", "OpenCV"],
+        github: "https://github.com/duttavibhor",
         live: "#"
     },
     {
         id: 2,
-        title: "Distributed File System",
-        category: "Systems",
-        image: "https://images.unsplash.com/photo-1558494949-ef2bb6db8744?q=80&w=1000&auto=format&fit=crop",
-        description: "A scalable, fault-tolerant distributed file system implemented in C++ and Go with Raft consensus.",
-        tech: ["C++", "Go", "gRPC", "Docker"],
-        github: "#",
-        live: "#"
-    },
-    {
-        id: 3,
-        title: "NFT Art Marketplace",
-        category: "Web3",
-        image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop",
-        description: "A decentralized marketplace for digital art trading built on Ethereum with smart contracts.",
-        tech: ["Solidity", "Next.js", "Ethers.js", "IPFS"],
-        github: "#",
-        live: "#"
-    },
-    {
-        id: 4,
-        title: "Stock Prediction Model",
-        category: "Data Science",
-        image: "https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=1000&auto=format&fit=crop",
-        description: "Time-series forecasting model using LSTM neural networks to predict stock market trends with 85% accuracy.",
-        tech: ["Python", "Keras", "Pandas", "Streamlit"],
+        title: "Arduino UNO Fire Alarm Sensor",
+        category: "Embedded Systems",
+        image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?q=80&w=1000&auto=format&fit=crop", // Electronics related placeholder
+        description: "Developed a fire-alarm detection system using Arduino Uno that triggers a loud buzzer when exposed to abnormal heat levels. Integrated DHT11/LM35 temperature sensor with real-time threshold monitoring and programmed safe-limit alerts using embedded C. Built a compact hardware prototype with LED indicators, buzzer output, and serial monitoring.",
+        tech: ["Arduino UNO", "BreadBoard", "Temperature Sensor", "Proteus", "Embedded C"],
         github: "#",
         live: "#"
     }

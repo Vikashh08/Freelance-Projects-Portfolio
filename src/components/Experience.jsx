@@ -5,27 +5,11 @@ import { FaBriefcase, FaCalendarAlt } from "react-icons/fa";
 const experiences = [
     {
         id: 1,
-        role: "AI Engineer Intern",
-        company: "Tech Innovators Inc.",
-        duration: "May 2024 - Present",
-        description: "Developing generative AI models for automated content creation. Optimized inference time by 40% using quantization techniques.",
-        skills: ["PyTorch", "Hugging Face", "AWS SageMaker"]
-    },
-    {
-        id: 2,
-        role: "Full Stack Developer Intern",
-        company: "Creative Solutions LLP",
-        duration: "June 2023 - Aug 2023",
-        description: "Built a scalable e-commerce platform using MERN stack. Implemented real-time order tracking and payment gateway integration.",
-        skills: ["React", "Node.js", "MongoDB", "Redux"]
-    },
-    {
-        id: 3,
-        role: "Machine Learning Research Trainee",
-        company: "University Research Lab",
-        duration: "Jan 2023 - April 2023",
-        description: "Conducted research on computer vision algorithms for medical image analysis. Published a paper on early tumor detection.",
-        skills: ["Python", "OpenCV", "Scikit-Learn"]
+        role: "Volunteer",
+        company: "EDUMUST",
+        duration: "Aug '24",
+        description: "Completed 75 hours assisting in computer literacy classes, technical support, educational resource development, community engagement and administrative tasks.",
+        skills: ["Teaching", "Technical Support", "Communication"]
     }
 ];
 

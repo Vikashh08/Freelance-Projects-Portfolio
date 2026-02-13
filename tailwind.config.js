@@ -7,17 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#FF0080', // Electric Pink
-        'secondary': '#00FFFF', // Cyber Cyan
-        'accent': '#7928CA', // Vivid Violet
-        'dark-bg': '#050505', // Pure Dark
-        'surface': '#121212', // Slightly lighter dark
-        'glass': 'rgba(255, 255, 255, 0.05)',
+        'primary': '#000000', // True Black
+        'secondary': '#f5f5f7', // Apple Platinum/White
+        'accent': '#2997ff', // Apple Blue
+        'dark-bg': '#000000', // Background
+        'surface': '#1d1d1f', // Apple Dark Gray
+        'glass': 'rgba(29, 29, 31, 0.72)', // Frosted
       },
       fontFamily: {
-        'outfit': ['Outfit', 'sans-serif'],
-        'dm': ['DM Sans', 'sans-serif'],
-        'fira': ['Fira Code', 'monospace'],
+        'inter': ['Inter', 'sans-serif'],
+        'sf': ['SF Pro Display', 'Inter', 'sans-serif'], // Fallback to Inter
       },
       animation: {
         'spin-slow': 'spin 10s linear infinite',

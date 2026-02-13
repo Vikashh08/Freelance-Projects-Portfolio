@@ -40,57 +40,26 @@ export const Achievements = () => {
                 </motion.div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-                    <Counter value="500" label="LeetCode Problems" />
                     <Counter value="10" label="Projects Built" />
-                    <Counter value="50" label="GitHub Stars" />
-                    <Counter value="1000" label="Commits this Year" />
+                    <Counter value="500" label="LeetCode Problems" />
+                    <Counter value="3" label="Hackathons" />
+                    <Counter value="100" label="Git Commits" />
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    <motion.a
-                        href="#"
-                        whileHover={{ y: -5 }}
-                        className="flex items-center justify-between p-6 bg-[#161b22] rounded-xl hover:bg-[#1f242d] border border-white/5 hover:border-white/20 transition-all group"
+                <div className="grid md:grid-cols-1 gap-8">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-secondary/50 transition-all text-center"
                     >
-                        <div className="flex items-center gap-4">
-                            <SiLeetcode className="text-yellow-500 text-3xl" />
-                            <div>
-                                <h4 className="text-white font-bold font-space text-lg">LeetCode</h4>
-                                <p className="text-gray-400 text-sm group-hover:text-yellow-500 transition-colors font-fira">Top 5% in Screen Test</p>
-                            </div>
+                        <h3 className="text-3xl font-bold text-white mb-4 font-space">HackWithVertos 1.0</h3>
+                        <p className="text-gray-300 text-xl font-dm mb-4">
+                            Reached the top 10 in HackWithVertos 1.0 organised by LPU.
+                        </p>
+                        <div className="inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-full font-bold">
+                            Top 10 Finalist
                         </div>
-                        <FaExternalLinkAlt className="text-gray-600 group-hover:text-white" />
-                    </motion.a>
-
-                    <motion.a
-                        href="#"
-                        whileHover={{ y: -5 }}
-                        className="flex items-center justify-between p-6 bg-[#161b22] rounded-xl hover:bg-[#1f242d] border border-white/5 hover:border-white/20 transition-all group"
-                    >
-                        <div className="flex items-center gap-4">
-                            <SiGeeksforgeeks className="text-green-500 text-3xl" />
-                            <div>
-                                <h4 className="text-white font-bold font-space text-lg">GeeksForGeeks</h4>
-                                <p className="text-gray-400 text-sm group-hover:text-green-500 transition-colors font-fira">Institute Rank 1</p>
-                            </div>
-                        </div>
-                        <FaExternalLinkAlt className="text-gray-600 group-hover:text-white" />
-                    </motion.a>
-
-                    <motion.a
-                        href="#"
-                        whileHover={{ y: -5 }}
-                        className="flex items-center justify-between p-6 bg-[#161b22] rounded-xl hover:bg-[#1f242d] border border-white/5 hover:border-white/20 transition-all group"
-                    >
-                        <div className="flex items-center gap-4">
-                            <SiCodechef className="text-brown-500 text-3xl" />
-                            <div>
-                                <h4 className="text-white font-bold font-space text-lg">CodeChef</h4>
-                                <p className="text-gray-400 text-sm group-hover:text-white transition-colors font-fira">3 Star Coder</p>
-                            </div>
-                        </div>
-                        <FaExternalLinkAlt className="text-gray-600 group-hover:text-white" />
-                    </motion.a>
+                    </motion.div>
                 </div>
             </div>
         </section>
