@@ -1,116 +1,147 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FaPaperPlane, FaEnvelope } from "react-icons/fa";
+import { FaPaperPlane, FaEnvelope, FaGlobe } from "react-icons/fa";
 
 export const Contact = () => {
     const formRef = useRef();
-    const [status, setStatus] = useState("idle"); // idle, sending, success, error
+    const [status, setStatus] = useState("idle");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus("sending");
 
-        // REPLACE THESE WITH YOUR ACTUAL KEYS from EmailJS dashboard
-        // Service ID: service_xxxxxx
-        // Template ID: template_xxxxxx
-        // Public Key: user_xxxxxx
-        // For now, we simulate success so the UI feedback is visible
+        // REPLACE THESE VALUES WITH YOUR EMAILJS KEYS
+        // 1. Go to emailjs.com and create an account
+        // 2. Create a specific 'Service' (e.g. Gmail) -> get Service ID
+        // 3. Create an 'Email Template' -> get Template ID
+        // 4. Go to 'Account' > 'Public Key' -> get Public Key
 
-        /* 
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_PUBLIC_KEY')
+        const serviceID = "YOUR_SERVICE_ID"; // e.g. "service_x8s9d7f"
+        const templateID = "YOUR_TEMPLATE_ID"; // e.g. "template_a7s6d5f"
+        const publicKey = "YOUR_PUBLIC_KEY";   // e.g. "user_123456789"
+
+        emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)
             .then((result) => {
-                setStatus('success');
+                setStatus("success");
                 formRef.current.reset();
             }, (error) => {
-                setStatus('error');
+                setStatus("error");
                 console.error(error);
             });
-        */
-
-        // Removing mock timeout to force user to put keys if they want it real, 
-        // but for demonstration I will keep the mock active until they replace keys.
-        setTimeout(() => {
-            setStatus("success");
-            formRef.current.reset();
-        }, 1500);
     };
 
     return (
-        <section id="contact" className="py-32 bg-secondary text-black relative">
-            <div className="max-w-3xl mx-auto px-6 text-center">
-                <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-black"
-                >
-                    Get in Touch.
-                </motion.h2>
-                <p className="text-xl text-gray-500 mb-12">
-                    Have a project in mind? Let's create something transformative.
-                </p>
+        <section id="contact" className="py-32 bg-black text-white relative overflow-hidden">
 
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="bg-white rounded-3xl shadow-xl p-8 md:p-12 text-left"
-                >
-                    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-500 mb-2">Name</label>
+            {/* Background Gradient - Extremely subtle white glow */}
+            <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-white/5 blur-[150px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+
+            <div className="max-w-6xl mx-auto px-6 relative z-10">
+                <div className="grid md:grid-cols-2 gap-16 items-start">
+
+                    {/* Left Column: Info & Text */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="text-4xl md:text-7xl font-sans font-bold tracking-tight mb-8 text-white">
+                            Let's Work Together<span className="text-gray-500">.</span>
+                        </h2>
+                        <p className="text-xl text-gray-400 mb-12 font-light leading-relaxed max-w-md">
+                            I'm currently available for freelance projects and open to new opportunities. Let's build something clean, minimal, and impactful.
+                        </p>
+
+                        <div className="space-y-6">
+                            <a href="mailto:duttavibhor01@gmail.com" className="group flex items-center gap-6 p-6 rounded-3xl bg-zinc-900/50 border border-white/5 hover:bg-white hover:text-black transition-all duration-300">
+                                <FaEnvelope size={24} className="text-gray-400 group-hover:text-black transition-colors" />
+                                <div>
+                                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1 group-hover:text-gray-600">Email</h4>
+                                    <span className="text-lg font-medium">duttavibhor01@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <div className="flex items-center gap-6 p-6 rounded-3xl bg-zinc-900/50 border border-white/5 hover:bg-white hover:text-black transition-all duration-300 group">
+                                <FaGlobe size={24} className="text-gray-400 group-hover:text-black transition-colors" />
+                                <div>
+                                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1 group-hover:text-gray-600">Location</h4>
+                                    <span className="text-lg font-medium">Remote / Worldwide</span>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Right Column: Form */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="bg-zinc-900 rounded-[2rem] p-8 md:p-12 border border-white/5 shadow-2xl relative"
+                    >
+                        <form ref={formRef} onSubmit={handleSubmit} className="space-y-8 relative z-10">
+                            <div className="space-y-2">
                                 <input
                                     type="text"
-                                    name="user_name"
+                                    name="user_name" // Required by EmailJS
                                     required
-                                    className="w-full bg-gray-100 border-none rounded-xl px-4 py-4 text-black focus:ring-2 focus:ring-blue-500 transition-all font-medium"
-                                    placeholder="John Doe"
+                                    className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white text-xl placeholder-gray-600 focus:outline-none focus:border-white transition-all font-light"
+                                    placeholder="What's your name?"
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-500 mb-2">Email</label>
+
+                            <div className="space-y-2">
                                 <input
                                     type="email"
-                                    name="user_email"
+                                    name="user_email" // Required by EmailJS
                                     required
-                                    className="w-full bg-gray-100 border-none rounded-xl px-4 py-4 text-black focus:ring-2 focus:ring-blue-500 transition-all font-medium"
-                                    placeholder="john@example.com"
+                                    className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white text-xl placeholder-gray-600 focus:outline-none focus:border-white transition-all font-light"
+                                    placeholder="What's your email?"
                                 />
                             </div>
-                        </div>
-                        <div>
-                            <label className="block text-sm font-semibold text-gray-500 mb-2">Message</label>
-                            <textarea
-                                name="message"
-                                required
-                                rows="5"
-                                className="w-full bg-gray-100 border-none rounded-xl px-4 py-4 text-black focus:ring-2 focus:ring-blue-500 transition-all resize-none font-medium"
-                                placeholder="Tell me about your project..."
-                            ></textarea>
-                        </div>
 
-                        <div className="flex justify-between items-center pt-4">
-                            <div className="text-sm text-gray-500 hidden md:block">
-                                or email at <a href="mailto:duttavibhor01@gmail.com" className="text-blue-500 hover:underline">duttavibhor01@gmail.com</a>
+                            <div className="space-y-2">
+                                <textarea
+                                    name="message" // Required by EmailJS
+                                    required
+                                    rows="4"
+                                    className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white text-xl placeholder-gray-600 focus:outline-none focus:border-white transition-all resize-none font-light"
+                                    placeholder="Tell me about your project..."
+                                ></textarea>
                             </div>
+
                             <button
                                 type="submit"
                                 disabled={status === "sending"}
-                                className="px-8 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2"
+                                className="w-full py-5 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3 mt-8"
                             >
-                                {status === "sending" ? "Sending..." : status === "success" ? "Sent!" : "Send Message"}
-                                {status !== "sending" && status !== "success" && <FaPaperPlane />}
+                                {status === "sending" ? "Sending..." : status === "success" ? "Message Sent" : "Send Message"}
+                                {status !== "sending" && status !== "success" && <FaPaperPlane size={16} />}
                             </button>
-                        </div>
-                        {status === "success" && (
-                            <p className="text-green-600 text-sm mt-2 text-center">Message sent successfully! I'll get back to you soon.</p>
-                        )}
-                        {status === "error" && (
-                            <p className="text-red-500 text-sm mt-2 text-center">Something went wrong. Please try again later.</p>
-                        )}
-                    </form>
-                </motion.div>
+
+                            {status === "success" && (
+                                <motion.p
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="text-gray-400 text-sm text-center font-medium mt-4"
+                                >
+                                    Thanks! I'll be in touch soon.
+                                </motion.p>
+                            )}
+                            {status === "error" && (
+                                <motion.p
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="text-red-400 text-sm text-center font-medium mt-4"
+                                >
+                                    Something went wrong. Please try again.
+                                </motion.p>
+                            )}
+                        </form>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
