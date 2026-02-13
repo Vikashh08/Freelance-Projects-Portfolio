@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FaPaperPlane, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaPaperPlane, FaEnvelope } from "react-icons/fa";
 
 export const Contact = () => {
     const formRef = useRef();
@@ -11,11 +11,11 @@ export const Contact = () => {
         e.preventDefault();
         setStatus("sending");
 
-        // Mock email sending for now as User needs to provide ServiceID/TemplateID
-        setTimeout(() => {
-            setStatus("success");
-            formRef.current.reset();
-        }, 1500);
+        // REPLACE THESE WITH YOUR ACTUAL KEYS from EmailJS dashboard
+        // Service ID: service_xxxxxx
+        // Template ID: template_xxxxxx
+        // Public Key: user_xxxxxx
+        // For now, we simulate success so the UI feedback is visible
 
         /* 
         emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_PUBLIC_KEY')
@@ -24,117 +24,91 @@ export const Contact = () => {
                 formRef.current.reset();
             }, (error) => {
                 setStatus('error');
+                console.error(error);
             });
         */
+
+        // Removing mock timeout to force user to put keys if they want it real, 
+        // but for demonstration I will keep the mock active until they replace keys.
+        setTimeout(() => {
+            setStatus("success");
+            formRef.current.reset();
+        }, 1500);
     };
 
     return (
-        <section id="contact" className="py-20 bg-dark-bg relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>
-
-            <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-
-                {/* Contact Info */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+        <section id="contact" className="py-32 bg-secondary text-black relative">
+            <div className="max-w-3xl mx-auto px-6 text-center">
+                <motion.h2
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-black"
                 >
-                    <h3 className="text-secondary font-fira text-lg mb-2">05. Get in Touch</h3>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-outfit">
-                        Let's Work <span className="text-gradient">Together</span>
-                    </h2>
-                    <p className="text-gray-400 text-lg mb-8 max-w-md font-dm">
-                        I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                    </p>
+                    Get in Touch.
+                </motion.h2>
+                <p className="text-xl text-gray-500 mb-12">
+                    Have a project in mind? Let's create something transformative.
+                </p>
 
-                    <div className="space-y-6">
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-secondary">
-                                <FaEnvelope size={20} />
-                            </div>
-                            <div>
-                                <h4 className="text-white font-semibold">Email</h4>
-                                <p className="text-gray-400">duttavibhor01@gmail.com</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-primary">
-                                <FaPhoneAlt size={20} />
-                            </div>
-                            <div>
-                                <h4 className="text-white font-semibold font-outfit">Phone</h4>
-                                <p className="text-gray-400 font-dm">+91 1234567890</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-pink-500">
-                                <FaMapMarkerAlt size={20} />
-                            </div>
-                            <div>
-                                <h4 className="text-white font-semibold">Location</h4>
-                                <p className="text-gray-400">New Delhi, India</p>
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* Contact Form */}
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10 shadow-2xl"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="bg-white rounded-3xl shadow-xl p-8 md:p-12 text-left"
                 >
                     <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                            <label className="block text-gray-300 mb-2 text-sm font-medium">Your Name</label>
-                            <input
-                                type="text"
-                                name="user_name"
-                                required
-                                className="w-full bg-dark-bg/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all"
-                                placeholder="John Doe"
-                            />
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-500 mb-2">Name</label>
+                                <input
+                                    type="text"
+                                    name="user_name"
+                                    required
+                                    className="w-full bg-gray-100 border-none rounded-xl px-4 py-4 text-black focus:ring-2 focus:ring-blue-500 transition-all font-medium"
+                                    placeholder="John Doe"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-500 mb-2">Email</label>
+                                <input
+                                    type="email"
+                                    name="user_email"
+                                    required
+                                    className="w-full bg-gray-100 border-none rounded-xl px-4 py-4 text-black focus:ring-2 focus:ring-blue-500 transition-all font-medium"
+                                    placeholder="john@example.com"
+                                />
+                            </div>
                         </div>
                         <div>
-                            <label className="block text-gray-300 mb-2 text-sm font-medium">Your Email</label>
-                            <input
-                                type="email"
-                                name="user_email"
-                                required
-                                className="w-full bg-dark-bg/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all"
-                                placeholder="john@example.com"
-                            />
-                        </div>
-                        <div>
-                            <label className="block text-gray-300 mb-2 text-sm font-medium">Message</label>
+                            <label className="block text-sm font-semibold text-gray-500 mb-2">Message</label>
                             <textarea
                                 name="message"
                                 required
-                                rows="4"
-                                className="w-full bg-dark-bg/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all resize-none"
-                                placeholder="Hi, I'd like to discuss a project..."
+                                rows="5"
+                                className="w-full bg-gray-100 border-none rounded-xl px-4 py-4 text-black focus:ring-2 focus:ring-blue-500 transition-all resize-none font-medium"
+                                placeholder="Tell me about your project..."
                             ></textarea>
                         </div>
 
-                        <button
-                            type="submit"
-                            disabled={status === "sending"}
-                            className="w-full py-4 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-bold text-lg flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(0,243,255,0.4)] transition-all disabled:opacity-70 disabled:cursor-not-allowed transform active:scale-95"
-                        >
-                            {status === "sending" ? (
-                                <span className="animate-pulse">Sending...</span>
-                            ) : status === "success" ? (
-                                <span>Message Sent!</span>
-                            ) : (
-                                <>
-                                    Send Message <FaPaperPlane />
-                                </>
-                            )}
-                        </button>
+                        <div className="flex justify-between items-center pt-4">
+                            <div className="text-sm text-gray-500 hidden md:block">
+                                or email at <a href="mailto:duttavibhor01@gmail.com" className="text-blue-500 hover:underline">duttavibhor01@gmail.com</a>
+                            </div>
+                            <button
+                                type="submit"
+                                disabled={status === "sending"}
+                                className="px-8 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2"
+                            >
+                                {status === "sending" ? "Sending..." : status === "success" ? "Sent!" : "Send Message"}
+                                {status !== "sending" && status !== "success" && <FaPaperPlane />}
+                            </button>
+                        </div>
+                        {status === "success" && (
+                            <p className="text-green-600 text-sm mt-2 text-center">Message sent successfully! I'll get back to you soon.</p>
+                        )}
+                        {status === "error" && (
+                            <p className="text-red-500 text-sm mt-2 text-center">Something went wrong. Please try again later.</p>
+                        )}
                     </form>
                 </motion.div>
             </div>

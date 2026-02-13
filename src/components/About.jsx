@@ -2,76 +2,49 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export const About = () => {
-    const features = [
-        { title: "AI Enthusiast", desc: "Passionate about building intelligent agents and generative models." },
-        { title: "Problem Solver", desc: "Optimizing algorithms for scalability and efficiency." },
-        { title: "Visual Creator", desc: "Designing immersive web experiences that engage users." },
-        { title: "Lifelong Learner", desc: "Constantly exploring new tech stacks and research papers." },
-    ];
-
     return (
-        <section id="about" className="py-20 bg-dark-bg relative overflow-hidden">
+        <section id="about" className="py-32 bg-black text-white">
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-                {/* Left Side - Image/Graphic */}
+                {/* Content */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="relative"
-                >
-                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-white/10 group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 mix-blend-overlay z-10"></div>
-                        <img
-                            src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop"
-                            alt="About Me"
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
-                        />
-
-                        {/* Decorative Elements */}
-                        <div className="absolute -bottom-5 -right-5 w-24 h-24 bg-neon-blue rounded-full blur-[50px] opacity-60"></div>
-                        <div className="absolute -top-5 -left-5 w-24 h-24 bg-neon-purple rounded-full blur-[50px] opacity-60"></div>
-                    </div>
-                </motion.div>
-
-                {/* Right Side - Content */}
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
                 >
-                    <h3 className="text-secondary font-fira text-lg mb-2">01. About Me</h3>
-                    <h2 className="text-4xl font-bold font-space text-white mb-6">
-                        Bridging the Gap Between <span className="text-gradient">Hardware & AI</span>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+                        Driven by Intelligence. <br />
+                        <span className="text-gray-500">Defined by Code.</span>
                     </h2>
 
-                    <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                        I am a B.Tech Computer Science and Engineering student at Lovely Professional University.
-                        My passion lies in leveraging Artificial Intelligence and Machine Learning to solve real-world problems,
-                        from crop disease detection to smart hardware integration.
-                    </p>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                        I enjoy working with Python, C++, and various AI frameworks. I'm also a team player with strong
-                        problem-solving skills and leadership qualities, always eager to learn and adapt to new technologies.
-                    </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {features.map((feature, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 hover:bg-white/10 transition-all cursor-default"
-                            >
-                                <h4 className="text-white font-semibold mb-1">{feature.title}</h4>
-                                <p className="text-gray-500 text-sm">{feature.desc}</p>
-                            </motion.div>
-                        ))}
+                    <div className="space-y-6 text-xl text-gray-400 leading-relaxed font-medium">
+                        <p>
+                            I am a Computer Science Engineer with a deep focus on <strong className="text-white">Artificial Intelligence</strong> and <strong className="text-white">Machine Learning</strong>.
+                        </p>
+                        <p>
+                            From developing crop disease detection algorithms to architecting smart hardware solutions, I bridge the gap between theoretical models and real-world application.
+                        </p>
                     </div>
                 </motion.div>
+
+                {/* Image */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="relative"
+                >
+                    <div className="aspect-[4/5] rounded-[40px] overflow-hidden bg-surface">
+                        <img
+                            src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000"
+                            alt="Portrait"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                </motion.div>
+
             </div>
         </section>
     );

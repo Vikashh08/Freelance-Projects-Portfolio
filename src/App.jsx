@@ -10,8 +10,6 @@ import { Certifications } from './components/Certifications';
 import { Achievements } from './components/Achievements';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { Cursor } from './components/Cursor';
-
 import { Education } from './components/Education';
 
 function App() {
@@ -23,12 +21,10 @@ function App() {
   });
 
   return (
-    <div className="bg-dark-bg min-h-screen text-white font-dm selection:bg-secondary/30 selection:text-secondary cursor-none">
-      <Cursor />
-
+    <div className="bg-black min-h-screen text-secondary font-inter selection:bg-accent/30 selection:text-white">
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-accent z-50 origin-left"
         style={{ scaleX }}
       />
 
