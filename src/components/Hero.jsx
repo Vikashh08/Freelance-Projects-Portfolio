@@ -11,12 +11,40 @@ export const Hero = () => {
 
             <div className="max-w-5xl mx-auto px-6 text-center z-10">
                 <motion.h1
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-6xl md:text-9xl font-bold tracking-tighter text-white mb-6"
+                    className="text-6xl md:text-9xl font-bold tracking-tighter text-white mb-6 flex overflow-hidden justify-center"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.05,
+                                delayChildren: 0.2
+                            }
+                        }
+                    }}
                 >
-                    Vibhor Dutta.
+                    {Array.from("Vibhor Dutta.").map((char, index) => (
+                        <motion.span
+                            key={index}
+                            variants={{
+                                hidden: { y: "100%", opacity: 0 },
+                                visible: {
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: {
+                                        type: "spring",
+                                        damping: 15,
+                                        stiffness: 100
+                                    }
+                                }
+                            }}
+                        >
+                            {char === " " ? "\u00A0" : char}
+                        </motion.span>
+                    ))}
                 </motion.h1>
 
                 <motion.div
