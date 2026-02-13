@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 
 const navLinks = [
     { title: "Home", href: "#hero" },
@@ -17,7 +17,22 @@ export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("hero");
-    const isManualScroll = useRef(false); // Ref to track click-triggered scrolling
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+    const isManualScroll = useRef(false);
+
+    // Theme Toggle Logic
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+    };
 
     // 1. Efficient Scroll Handler for Navbar Appearance
     useEffect(() => {
@@ -41,7 +56,7 @@ export const Navbar = () => {
         };
 
         const observer = new IntersectionObserver((entries) => {
-            if (isManualScroll.current) return; // Skip updates if scrolling manually via click
+            if (isManualScroll.current) return;
 
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -71,9 +86,8 @@ export const Navbar = () => {
         const element = document.getElementById(targetId);
 
         if (element) {
-            // Lock observer updates
             isManualScroll.current = true;
-            setActiveSection(targetId); // Immediate UI update
+            setActiveSection(targetId);
             setMobileMenuOpen(false);
 
             const offsetTop = element.offsetTop;
@@ -82,7 +96,6 @@ export const Navbar = () => {
                 behavior: "smooth"
             });
 
-            // Re-enable observer after scroll animation (approx 800ms)
             setTimeout(() => {
                 isManualScroll.current = false;
             }, 800);
@@ -99,18 +112,20 @@ export const Navbar = () => {
             <div
                 className={`
                     flex items-center justify-between px-6 py-3 rounded-full 
-                    backdrop-blur-md border border-white/10 shadow-2xl
+                    backdrop-blur-md border shadow-2xl
                     transition-all duration-500 ease-in-out
-                    ${isScrolled ? "bg-black/90 w-[95%] md:w-[85%]" : "bg-black/60 w-[95%] md:w-[90%]"}
+                    ${isScrolled
+                        ? "bg-white/80 dark:bg-black/90 border-black/5 dark:border-white/10 w-[95%] md:w-[85%]"
+                        : "bg-white/50 dark:bg-black/60 border-black/5 dark:border-white/10 w-[95%] md:w-[90%]"}
                 `}
             >
                 {/* Logo */}
                 <a
                     href="#hero"
                     onClick={(e) => handleScrollTo(e, "#hero")}
-                    className="text-2xl font-bold font-sans tracking-tighter text-white"
+                    className="text-2xl font-bold font-sans tracking-tighter text-black dark:text-white transition-colors"
                 >
-                    Vibhor<span className="text-cyan-400">.</span>
+                    Vibhor<span className="text-cyan-600 dark:text-cyan-400">.</span>
                 </a>
 
                 {/* Desktop Menu */}
@@ -122,12 +137,16 @@ export const Navbar = () => {
                                 key={link.title}
                                 href={link.href}
                                 onClick={(e) => handleScrollTo(e, link.href)}
-                                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full ${isActive ? "text-black" : "text-gray-400 hover:text-cyan-400"}`}
+                                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full 
+                                    ${isActive
+                                        ? "text-white dark:text-black"
+                                        : "text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400"
+                                    }`}
                             >
                                 {isActive && (
                                     <motion.span
                                         layoutId="active-pill"
-                                        className="absolute inset-0 bg-white rounded-full z-[-1]"
+                                        className="absolute inset-0 bg-black dark:bg-white rounded-full z-[-1]"
                                         transition={{
                                             type: "spring",
                                             stiffness: 400,
@@ -139,15 +158,33 @@ export const Navbar = () => {
                             </a>
                         );
                     })}
+
+                    {/* Theme Toggle Button */}
+                    <button
+                        onClick={toggleTheme}
+                        className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-white/20 transition-all font-inter"
+                        aria-label="Toggle Theme"
+                    >
+                        {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
+                    </button>
                 </div>
 
-                {/* Mobile Toggle */}
-                <button
-                    className="md:hidden text-white text-2xl"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                    {mobileMenuOpen ? <FaTimes /> : <FaBars />}
-                </button>
+                {/* Mobile Controls (Theme + Menu) */}
+                <div className="md:hidden flex items-center gap-4">
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 rounded-full bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-yellow-400"
+                    >
+                        {theme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
+                    </button>
+
+                    <button
+                        className="text-black dark:text-white text-2xl"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    >
+                        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu Overlay */}
@@ -157,14 +194,18 @@ export const Navbar = () => {
                         initial={{ opacity: 0, scale: 0.95, y: -20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                        className="absolute top-24 left-4 right-4 bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 shadow-2xl md:hidden"
+                        className="absolute top-24 left-4 right-4 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-3xl p-6 flex flex-col gap-4 shadow-2xl md:hidden"
                     >
                         {navLinks.map((link) => (
                             <a
                                 key={link.title}
                                 href={link.href}
                                 onClick={(e) => handleScrollTo(e, link.href)}
-                                className={`text-lg font-medium text-center py-3 rounded-xl transition-colors ${activeSection === link.href.substring(1) ? "bg-white text-black" : "text-gray-400 hover:text-cyan-400"}`}
+                                className={`text-lg font-medium text-center py-3 rounded-xl transition-colors 
+                                    ${activeSection === link.href.substring(1)
+                                        ? "bg-black dark:bg-white text-white dark:text-black"
+                                        : "text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400"
+                                    }`}
                             >
                                 {link.title}
                             </a>

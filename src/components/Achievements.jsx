@@ -5,16 +5,16 @@ import { FaCode, FaTrophy, FaLayerGroup } from "react-icons/fa";
 
 export const Achievements = () => {
     return (
-        <section id="achievements" className="py-24 bg-black text-white relative overflow-hidden">
+        <section id="achievements" className="py-24 bg-white dark:bg-black text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-300">
 
             {/* Background Texture */}
-            <div className="absolute inset-0 bg-zinc-900/20 opacity-50 pointer-events-none" />
+            <div className="absolute inset-0 bg-stone-100/50 dark:bg-zinc-900/20 opacity-50 pointer-events-none" />
 
             {/* Pulsing Amber Glow */}
             <motion.div
                 animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[120px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-amber-200/40 dark:bg-amber-500/10 blur-[120px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"
             />
 
             <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -27,7 +27,7 @@ export const Achievements = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                         whileHover={{ y: -10, boxShadow: "0 20px 40px -10px rgba(245, 158, 11, 0.1)" }}
-                        className="group p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-amber-500/50 hover:bg-zinc-800 transition-all duration-300 text-center relative overflow-hidden shadow-lg"
+                        className="group p-8 rounded-3xl bg-gray-100 dark:bg-zinc-900 border border-black/5 dark:border-white/5 hover:border-amber-500/50 hover:bg-gray-200 dark:hover:bg-zinc-800 transition-all duration-300 text-center relative overflow-hidden shadow-lg"
                     >
                         <motion.div
                             animate={{ y: [0, -5, 0] }}
@@ -37,10 +37,10 @@ export const Achievements = () => {
                             <FaLayerGroup size={80} />
                         </motion.div>
 
-                        <div className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 mb-2">
+                        <div className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-gray-400 mb-2">
                             <CountUp end={8} duration={2.5} />+
                         </div>
-                        <p className="text-lg text-amber-500 font-semibold uppercase tracking-widest mt-4">
+                        <p className="text-lg text-amber-600 dark:text-amber-500 font-semibold uppercase tracking-widest mt-4">
                             Major Projects
                         </p>
                     </motion.div>
@@ -52,7 +52,7 @@ export const Achievements = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                         whileHover={{ y: -10, boxShadow: "0 20px 40px -10px rgba(245, 158, 11, 0.1)" }}
-                        className="group p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-amber-500/50 hover:bg-zinc-800 transition-all duration-300 text-center relative overflow-hidden shadow-lg"
+                        className="group p-8 rounded-3xl bg-gray-100 dark:bg-zinc-900 border border-black/5 dark:border-white/5 hover:border-amber-500/50 hover:bg-gray-200 dark:hover:bg-zinc-800 transition-all duration-300 text-center relative overflow-hidden shadow-lg"
                     >
                         <motion.div
                             animate={{ rotate: [0, 5, -5, 0] }}
@@ -62,10 +62,10 @@ export const Achievements = () => {
                             <FaTrophy size={80} />
                         </motion.div>
 
-                        <div className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 mb-2 flex items-center justify-center">
+                        <div className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-gray-400 mb-2 flex items-center justify-center">
                             <span>Top 10</span>
                         </div>
-                        <p className="text-lg text-amber-500 font-semibold uppercase tracking-widest mt-4">
+                        <p className="text-lg text-amber-600 dark:text-amber-500 font-semibold uppercase tracking-widest mt-4">
                             HackWithVertos 1.0
                         </p>
                     </motion.div>
@@ -77,7 +77,7 @@ export const Achievements = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         whileHover={{ y: -10, boxShadow: "0 20px 40px -10px rgba(245, 158, 11, 0.1)" }}
-                        className="group p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-amber-500/50 hover:bg-zinc-800 transition-all duration-300 text-center relative overflow-hidden shadow-lg"
+                        className="group p-8 rounded-3xl bg-gray-100 dark:bg-zinc-900 border border-black/5 dark:border-white/5 hover:border-amber-500/50 hover:bg-gray-200 dark:hover:bg-zinc-800 transition-all duration-300 text-center relative overflow-hidden shadow-lg"
                     >
                         <motion.div
                             animate={{ scale: [1, 1.1, 1] }}
@@ -87,10 +87,10 @@ export const Achievements = () => {
                             <FaCode size={80} />
                         </motion.div>
 
-                        <div className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 mb-2">
+                        <div className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-gray-400 mb-2">
                             <CountUp end={200} duration={3} />+
                         </div>
-                        <p className="text-lg text-amber-500 font-semibold uppercase tracking-widest mt-4">
+                        <p className="text-lg text-amber-600 dark:text-amber-500 font-semibold uppercase tracking-widest mt-4">
                             Git Commits
                         </p>
                     </motion.div>

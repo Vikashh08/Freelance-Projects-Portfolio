@@ -80,11 +80,11 @@ const itemVariants = {
 
 export const Skills = () => {
     return (
-        <section id="skills" className="py-32 bg-black text-white relative overflow-hidden">
+        <section id="skills" className="py-32 bg-white dark:bg-black text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-300">
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[10%] right-[-5%] w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[10%] left-[-5%] w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[120px]" />
+                <div className="absolute top-[10%] right-[-5%] w-[500px] h-[500px] bg-cyan-200/40 dark:bg-cyan-900/10 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[10%] left-[-5%] w-[500px] h-[500px] bg-purple-200/40 dark:bg-purple-900/10 rounded-full blur-[120px]" />
             </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -95,10 +95,10 @@ export const Skills = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-24 text-center"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white flex justify-center items-center gap-4">
-                        Technical Proficiency<span className="text-cyan-400">.</span>
+                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-gray-900 dark:text-white flex justify-center items-center gap-4">
+                        Technical Proficiency<span className="text-cyan-600 dark:text-cyan-400">.</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                         A comprehensive suite of technologies powering intelligent solutions.
                     </p>
                 </motion.div>
@@ -115,12 +115,12 @@ export const Skills = () => {
                         >
                             <motion.div
                                 variants={itemVariants}
-                                className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4"
+                                className="flex items-center gap-4 mb-8 border-b border-black/10 dark:border-white/10 pb-4"
                             >
-                                <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                                <div className="p-2 rounded-lg bg-cyan-100 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
                                     <category.icon size={28} />
                                 </div>
-                                <h3 className="text-3xl font-bold text-white tracking-wide">
+                                <h3 className="text-3xl font-bold text-gray-900 dark:text-white tracking-wide">
                                     {category.category}
                                 </h3>
                             </motion.div>
@@ -136,13 +136,13 @@ export const Skills = () => {
                                             backgroundColor: "rgba(255, 255, 255, 0.1)",
                                             borderColor: "rgba(255, 255, 255, 0.4)"
                                         }}
-                                        className="flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 cursor-pointer transition-colors group"
+                                        className="flex items-center gap-3 px-5 py-3 rounded-full bg-gray-100 dark:bg-white/5 border border-black/10 dark:border-white/10 cursor-pointer transition-colors group"
                                     >
                                         <item.icon
                                             className="text-xl transition-transform group-hover:rotate-12 duration-300"
                                             style={{ color: item.color }}
                                         />
-                                        <span className="text-base font-medium text-gray-300 group-hover:text-white">
+                                        <span className="text-base font-medium text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white">
                                             {item.name}
                                         </span>
                                     </motion.div>

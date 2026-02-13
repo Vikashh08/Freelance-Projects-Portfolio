@@ -21,7 +21,7 @@ function App() {
   });
 
   return (
-    <div className="bg-black min-h-screen text-secondary font-inter selection:bg-accent/30 selection:text-white">
+    <div className="bg-white dark:bg-black min-h-screen text-gray-900 dark:text-secondary font-inter selection:bg-accent/30 selection:text-white transition-colors duration-300">
       {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-accent z-50 origin-left"

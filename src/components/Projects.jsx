@@ -27,11 +27,11 @@ const projects = [
 
 export const Projects = () => {
     return (
-        <section id="projects" className="py-32 bg-black text-white relative overflow-hidden">
+        <section id="projects" className="py-32 bg-white dark:bg-black text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-300">
 
             {/* Ambient Background Glow */}
-            <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-indigo-900/10 blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-900/10 blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-indigo-200/40 dark:bg-indigo-900/10 blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-200/40 dark:bg-blue-900/10 blur-[150px] rounded-full pointer-events-none" />
 
             <div className="max-w-6xl mx-auto px-6 relative z-10">
                 <motion.div
@@ -41,8 +41,8 @@ export const Projects = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-24 text-center"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">Selected Work.</h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white">Selected Work.</h2>
+                    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                         Engineering intelligence into reality.
                     </p>
                 </motion.div>
@@ -55,16 +55,16 @@ export const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="group relative h-[450px] rounded-[32px] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl"
+                            className="group relative h-[450px] rounded-[32px] overflow-hidden bg-gray-100 dark:bg-white/5 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-lg"
                         >
                             {/* Image Container with Reveal Effect */}
                             <div className="absolute inset-0 z-0">
                                 <motion.img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 dark:opacity-60 group-hover:opacity-80 dark:group-hover:opacity-40"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent dark:from-black dark:via-black/80 dark:to-transparent" />
                             </div>
 
                             {/* Content */}
@@ -72,7 +72,7 @@ export const Projects = () => {
                                 <div className="space-y-4 transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
                                     <div className="flex justify-between items-start">
                                         <div>
-                                            <span className="text-xs font-bold tracking-widest text-indigo-400 uppercase mb-2 block">
+                                            <span className="text-xs font-bold tracking-widest text-indigo-300 dark:text-indigo-400 uppercase mb-2 block">
                                                 {project.category}
                                             </span>
                                             <h3 className="text-3xl font-bold text-white mb-1 group-hover:text-indigo-200 transition-colors">
@@ -89,7 +89,7 @@ export const Projects = () => {
                                         </motion.a>
                                     </div>
 
-                                    <p className="text-gray-400 text-base leading-relaxed line-clamp-2 bg-blend-soft-light group-hover:text-gray-200 transition-colors">
+                                    <p className="text-gray-200 dark:text-gray-400 text-base leading-relaxed line-clamp-2 bg-blend-soft-light group-hover:text-white dark:group-hover:text-gray-200 transition-colors">
                                         {project.description}
                                     </p>
 
@@ -97,7 +97,7 @@ export const Projects = () => {
                                         {project.tech.map((t, i) => (
                                             <span
                                                 key={i}
-                                                className="text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded border border-white/20 text-gray-300"
+                                                className="text-[10px] font-semibold tracking-wider uppercase px-2 py-1 rounded border border-white/20 text-gray-100 dark:text-gray-300 bg-white/5"
                                             >
                                                 {t}
                                             </span>

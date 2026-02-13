@@ -5,12 +5,11 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
 }
 
 body {
-  @apply bg-black text-secondary font-inter antialiased selection:bg-accent/30 selection:text-white;
-  background-color: #000000;
+  @apply bg-white text-gray-900 dark:bg-black dark:text-secondary font-inter antialiased selection:bg-accent/30 selection:text-white;
 }
 
 /* Apple-style smooth scrolling */
