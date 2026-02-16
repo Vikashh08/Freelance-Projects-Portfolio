@@ -6,12 +6,12 @@ export const Hero = () => {
     const name = "Vibhor Dutta";
 
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white dark:bg-black pt-20 transition-colors duration-300">
+        <section id="hero" className="relative flex items-center justify-center min-h-screen pt-20 overflow-hidden transition-colors duration-300 bg-white dark:bg-black">
             {/* Background Gradient */}
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.05),transparent_50%)]" />
 
             {/* Content Container */}
-            <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div className="relative z-10 px-6 mx-auto text-center max-w-7xl">
 
                 {/* Intro Animation */}
                 <motion.div
@@ -19,12 +19,12 @@ export const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-xl md:text-2xl font-light text-cyan-600 dark:text-cyan-400 mb-4 tracking-widest uppercase">
+                    <h2 className="mb-4 text-xl font-light tracking-widest uppercase md:text-2xl text-cyan-600 dark:text-cyan-400">
                         Hello, I'm
                     </h2>
 
                     {/* Staggered Name Animation */}
-                    <h1 className="text-5xl md:text-8xl font-bold text-gray-900 dark:text-white mb-6 tracking-tighter flex justify-center flex-wrap gap-2 md:gap-4 overflow-hidden">
+                    <h1 className="flex flex-wrap justify-center gap-2 mb-6 overflow-hidden text-5xl font-bold tracking-tighter text-gray-900 md:text-8xl dark:text-white md:gap-4">
                         {name.split("").map((char, index) => (
                             <motion.span
                                 key={index}
@@ -35,7 +35,7 @@ export const Hero = () => {
                                     delay: index * 0.05, // Stagger effect
                                     ease: [0.2, 0.65, 0.3, 0.9], // Custom easing for "pop" feel
                                 }}
-                                className="inline-block hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 cursor-default"
+                                className="inline-block transition-colors duration-300 cursor-default hover:text-cyan-600 dark:hover:text-cyan-400"
                             >
                                 {char === " " ? "\u00A0" : char}
                             </motion.span>
@@ -50,16 +50,16 @@ export const Hero = () => {
                         </motion.span>
                     </h1>
 
-                    <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-                        A passionate <span className="text-gray-900 dark:text-white font-medium">AI/ML Student & Researcher</span> exploring the frontiers of <span className="text-gray-900 dark:text-white font-medium">Deep Learning</span>, <span className="text-gray-900 dark:text-white font-medium">GenAI</span>, and <span className="text-gray-900 dark:text-white font-medium">Computer Vision</span>.
+                    <p className="max-w-2xl mx-auto mb-10 text-lg font-light leading-relaxed text-gray-600 md:text-2xl dark:text-gray-400">
+                        A passionate <span className="font-medium text-gray-900 dark:text-white">AI/ML Student</span> exploring the frontiers of <span className="font-medium text-gray-900 dark:text-white">Machine Learning</span>, <span className="font-medium text-gray-900 dark:text-white">GenAI</span>, and <span className="font-medium text-gray-900 dark:text-white">Computer Vision</span>.
                     </p>
                 </motion.div>
 
                 {/* Buttons */}
-                <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
                     <a
                         href="#projects"
-                        className="px-8 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-bold text-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all shadow-lg hover:shadow-xl"
+                        className="px-8 py-3 text-lg font-bold text-white transition-all bg-black rounded-full shadow-lg dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 hover:shadow-xl"
                     >
                         View Work
                     </a>
@@ -68,18 +68,18 @@ export const Hero = () => {
                     <a
                         href="/Vibhor Resume.pdf"
                         download="Vibhor_Dutta_Resume.pdf"
-                        className="group flex items-center gap-3 px-8 py-3 rounded-full border border-black/10 dark:border-white/20 text-gray-900 dark:text-white font-medium text-lg hover:bg-black/5 dark:hover:bg-white/10 transition-all hover:border-cyan-600/50 dark:hover:border-cyan-400/50"
+                        className="flex items-center gap-3 px-8 py-3 text-lg font-medium text-gray-900 transition-all border rounded-full group border-black/10 dark:border-white/20 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 hover:border-cyan-600/50 dark:hover:border-cyan-400/50"
                     >
-                        <FaFileDownload className="text-gray-500 dark:text-gray-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors" />
+                        <FaFileDownload className="text-gray-500 transition-colors dark:text-gray-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400" />
                         Download CV
                     </a>
                 </div>
 
                 {/* Social Links */}
-                <div className="mt-16 flex gap-8 justify-center">
+                <div className="flex justify-center gap-8 mt-16">
                     {[
                         { icon: FaGithub, href: "https://github.com/duttavibhor" },
-                        { icon: FaLinkedin, href: "https://www.linkedin.com/in/vibhor-dutta-66779426a/" },
+                        { icon: FaLinkedin, href: "https://www.linkedin.com/in/vibhor-dutta-55797629a/" },
                         { icon: FaTwitter, href: "#" }
                     ].map((social, index) => (
                         <a
@@ -87,7 +87,7 @@ export const Hero = () => {
                             href={social.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-gray-600 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors transform hover:scale-110 duration-300"
+                            className="text-gray-600 transition-colors duration-300 transform dark:text-gray-500 hover:text-black dark:hover:text-white hover:scale-110"
                         >
                             <social.icon size={24} />
                         </a>
@@ -97,12 +97,12 @@ export const Hero = () => {
 
             {/* Scroll Indicator */}
             <motion.div
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                className="absolute -translate-x-1/2 bottom-10 left-1/2"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-                <div className="w-6 h-10 border-2 border-black/20 dark:border-white/20 rounded-full flex justify-center pt-2">
-                    <div className="w-1 h-2 bg-black/50 dark:bg-white/50 rounded-full" />
+                <div className="flex justify-center w-6 h-10 pt-2 border-2 rounded-full border-black/20 dark:border-white/20">
+                    <div className="w-1 h-2 rounded-full bg-black/50 dark:bg-white/50" />
                 </div>
             </motion.div>
         </section>

@@ -10,7 +10,7 @@ const skills = [
         icon: FaRobot,
         items: [
             { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
-            { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
+            // { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
             { name: "Scikit-Learn", icon: SiScikitlearn, color: "#F7931E" },
             { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
             { name: "Keras", icon: SiKeras, color: "#D00000" },
@@ -34,8 +34,9 @@ const skills = [
         icon: FaDatabase,
         items: [
             { name: "React", icon: SiReact, color: "#61DAFB" },
-            { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-            { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+            // { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+            { name: "CSS3", icon: SiCss3, color: "#47A248" },
+            
             { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
             { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
         ],
@@ -45,10 +46,10 @@ const skills = [
         icon: SiGit,
         items: [
             { name: "Git", icon: SiGit, color: "#F05032" },
-            { name: "Docker", icon: SiDocker, color: "#2496ED" },
+            // { name: "Docker", icon: SiDocker, color: "#2496ED" },
             { name: "Google Colab", icon: SiGooglecolab, color: "#F9AB00" },
             { name: "VS Code", icon: TbBrandVscode, color: "#007ACC" },
-            { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+            // { name: "Postman", icon: SiPostman, color: "#FF6C37" },
         ],
     },
 ];
@@ -80,14 +81,14 @@ const itemVariants = {
 
 export const Skills = () => {
     return (
-        <section id="skills" className="py-32 bg-white dark:bg-black text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-300">
+        <section id="skills" className="relative py-32 overflow-hidden text-gray-900 transition-colors duration-300 bg-white dark:bg-black dark:text-white">
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[10%] right-[-5%] w-[500px] h-[500px] bg-cyan-200/40 dark:bg-cyan-900/10 rounded-full blur-[120px]" />
                 <div className="absolute bottom-[10%] left-[-5%] w-[500px] h-[500px] bg-purple-200/40 dark:bg-purple-900/10 rounded-full blur-[120px]" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="relative z-10 px-6 mx-auto max-w-7xl">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -95,10 +96,10 @@ export const Skills = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-24 text-center"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-gray-900 dark:text-white flex justify-center items-center gap-4">
+                    <h2 className="flex items-center justify-center gap-4 mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-6xl dark:text-white">
                         Technical Proficiency<span className="text-cyan-600 dark:text-cyan-400">.</span>
                     </h2>
-                    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    <p className="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400">
                         A comprehensive suite of technologies powering intelligent solutions.
                     </p>
                 </motion.div>
@@ -115,12 +116,12 @@ export const Skills = () => {
                         >
                             <motion.div
                                 variants={itemVariants}
-                                className="flex items-center gap-4 mb-8 border-b border-black/10 dark:border-white/10 pb-4"
+                                className="flex items-center gap-4 pb-4 mb-8 border-b border-black/10 dark:border-white/10"
                             >
                                 <div className="p-2 rounded-lg bg-cyan-100 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
                                     <category.icon size={28} />
                                 </div>
-                                <h3 className="text-3xl font-bold text-gray-900 dark:text-white tracking-wide">
+                                <h3 className="text-3xl font-bold tracking-wide text-gray-900 dark:text-white">
                                     {category.category}
                                 </h3>
                             </motion.div>
@@ -136,10 +137,10 @@ export const Skills = () => {
                                             backgroundColor: "rgba(255, 255, 255, 0.1)",
                                             borderColor: "rgba(255, 255, 255, 0.4)"
                                         }}
-                                        className="flex items-center gap-3 px-5 py-3 rounded-full bg-gray-100 dark:bg-white/5 border border-black/10 dark:border-white/10 cursor-pointer transition-colors group"
+                                        className="flex items-center gap-3 px-5 py-3 transition-colors bg-gray-100 border rounded-full cursor-pointer dark:bg-white/5 border-black/10 dark:border-white/10 group"
                                     >
                                         <item.icon
-                                            className="text-xl transition-transform group-hover:rotate-12 duration-300"
+                                            className="text-xl transition-transform duration-300 group-hover:rotate-12"
                                             style={{ color: item.color }}
                                         />
                                         <span className="text-base font-medium text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white">
