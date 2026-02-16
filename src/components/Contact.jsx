@@ -17,9 +17,9 @@ export const Contact = () => {
         // 3. Create an 'Email Template' -> get Template ID
         // 4. Go to 'Account' > 'Public Key' -> get Public Key
 
-        const serviceID = "YOUR_SERVICE_ID"; // e.g. "service_x8s9d7f"
-        const templateID = "YOUR_TEMPLATE_ID"; // e.g. "template_a7s6d5f"
-        const publicKey = "YOUR_PUBLIC_KEY";   // e.g. "user_123456789"
+        const serviceID = "service_rqfq7yk"; // e.g. "service_x8s9d7f"
+        const templateID = "template_d6rykpa"; // e.g. "template_a7s6d5f"
+        const publicKey = "5HGCRcG_9LnoFURPK";   // e.g. "user_123456789"
 
         emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)
             .then((result) => {
