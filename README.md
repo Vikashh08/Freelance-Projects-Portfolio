@@ -1,17 +1,71 @@
-# React + Vite
+# Vibhor Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and interactive personal portfolio website built with React, Vite, and Tailwind CSS. This portfolio showcases my skills, projects, experience, and achievements with a premium design aesthetic.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Frontend Framework**: [React](https://react.dev/)
+-   **Build Tool**: [Vite](https://vitejs.dev/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+-   **3D Effects**: [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) & [Drei](https://github.com/pmndrs/drei)
+-   **Icons**: [React Icons](https://react-icons.github.io/react-icons/) & [Lucide React](https://lucide.dev/)
+-   **Type Animation**: [React Type Animation](https://www.npmjs.com/package/react-type-animation)
+-   **Count Up**: [React CountUp](https://www.npmjs.com/package/react-countup)
+-   **Email Service**: [EmailJS](https://www.emailjs.com/)
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+-   **Responsive Design**: Fully responsive layout that looks great on all devices (Mobile, Tablet, Desktop).
+-   **Modern UI/UX**: Clean, minimalist, and "Apple-esque" design with glassmorphism effects.
+-   **Interactive Animations**: Smooth scroll animations, hover effects, and entrance transitions using Framer Motion.
+-   **Dynamic Content**:
+    -   **Hero Section**: Engaging introduction with typing animation.
+    -   **About Me**: Detailed personal introduction.
+    -   **Skills**: Visual representation of technical skills.
+    -   **Projects**: Showcase of recent work with links and descriptions.
+    -   **Experience**: Professional timeline.
+    -   **Education & Certifications**: Academic background and credentials.
+    -   **Achievements**: Key milestones and awards.
+-   **Contact Form**: Functional contact form integrated with EmailJS.
+-   **Dark/Light Mode**: Support for dark and light themes (system preference or toggle).
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Freelance-Projects-Portfolio
+Follow these steps to set up the project locally on your machine.
+
+### Prerequisites
+
+-   [Node.js](https://nodejs.org/) (v18 or higher recommended)
+-   [npm](https://www.npmjs.com/) (usually comes with Node.js)
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/Vikashh08/Freelance-Projects-Portfolio.git
+    cd Freelance-Projects-Portfolio
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+    Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+
+## 📜 Scripts
+
+-   `npm run dev`: Starts the development server.
+-   `npm run build`: Builds the app for production.
+-   `npm run lint`: Runs ESLint to check for code quality issues.
+-   `npm run preview`: Locally previews the production build.
+
+## 📄 License
+
+This project is licensed under the MIT License.
