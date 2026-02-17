@@ -2,7 +2,7 @@
 
 A modern, responsive, and interactive personal portfolio website built with React, Vite, and Tailwind CSS. This portfolio showcases my skills, projects, experience, and achievements with a premium design aesthetic.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 -   **Frontend Framework**: [React](https://react.dev/)
 -   **Build Tool**: [Vite](https://vitejs.dev/)
@@ -14,7 +14,7 @@ A modern, responsive, and interactive personal portfolio website built with Reac
 -   **Count Up**: [React CountUp](https://www.npmjs.com/package/react-countup)
 -   **Email Service**: [EmailJS](https://www.emailjs.com/)
 
-## ✨ Features
+## Features
 
 -   **Responsive Design**: Fully responsive layout that looks great on all devices (Mobile, Tablet, Desktop).
 -   **Modern UI/UX**: Clean, minimalist, and "Apple-esque" design with glassmorphism effects.
@@ -30,7 +30,7 @@ A modern, responsive, and interactive personal portfolio website built with Reac
 -   **Contact Form**: Functional contact form integrated with EmailJS.
 -   **Dark/Light Mode**: Support for dark and light themes (system preference or toggle).
 
-## 📦 Getting Started
+##  Getting Started
 
 Follow these steps to set up the project locally on your machine.
 
@@ -59,13 +59,13 @@ Follow these steps to set up the project locally on your machine.
 
     Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-## 📜 Scripts
+## Scripts
 
 -   `npm run dev`: Starts the development server.
 -   `npm run build`: Builds the app for production.
 -   `npm run lint`: Runs ESLint to check for code quality issues.
 -   `npm run preview`: Locally previews the production build.
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
