@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaFileDownload } from "react-icons/fa";
 
 export const Hero = () => {
-    const name = "Vibhor Dutta";
+    const firstName = "Vibhor";
+    const lastName = "Dutta";
 
     return (
         <section id="hero" className="relative flex items-center justify-center min-h-screen pt-20 overflow-hidden transition-colors duration-300 bg-white dark:bg-black">
@@ -25,29 +26,51 @@ export const Hero = () => {
 
                     {/* Staggered Name Animation */}
                     <h1 className="flex flex-wrap justify-center gap-2 mb-6 overflow-hidden text-5xl font-bold tracking-tighter text-gray-900 md:text-8xl dark:text-white md:gap-4">
-                        {name.split("").map((char, index) => (
+                        {/* First Name Group */}
+                        <div className="flex gap-2 whitespace-nowrap">
+                            {firstName.split("").map((char, index) => (
+                                <motion.span
+                                    key={`first-${index}`}
+                                    initial={{ y: 100, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: index * 0.05,
+                                        ease: [0.2, 0.65, 0.3, 0.9],
+                                    }}
+                                    className="inline-block transition-colors duration-300 cursor-default hover:text-cyan-600 dark:hover:text-cyan-400"
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
+                        </div>
+
+                        {/* Last Name Group + Dot */}
+                        <div className="flex gap-2 whitespace-nowrap">
+                            {lastName.split("").map((char, index) => (
+                                <motion.span
+                                    key={`last-${index}`}
+                                    initial={{ y: 100, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: (firstName.length + 1 + index) * 0.05, // +1 accounts for the space
+                                        ease: [0.2, 0.65, 0.3, 0.9],
+                                    }}
+                                    className="inline-block transition-colors duration-300 cursor-default hover:text-cyan-600 dark:hover:text-cyan-400"
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
                             <motion.span
-                                key={index}
-                                initial={{ y: 100, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{
-                                    duration: 0.8,
-                                    delay: index * 0.05, // Stagger effect
-                                    ease: [0.2, 0.65, 0.3, 0.9], // Custom easing for "pop" feel
-                                }}
-                                className="inline-block transition-colors duration-300 cursor-default hover:text-cyan-600 dark:hover:text-cyan-400"
+                                initial={{ scale: 0, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ delay: 0.8, duration: 0.4 }}
+                                className="text-cyan-600 dark:text-cyan-400"
                             >
-                                {char === " " ? "\u00A0" : char}
+                                .
                             </motion.span>
-                        ))}
-                        <motion.span
-                            initial={{ scale: 0, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.8, duration: 0.4 }}
-                            className="text-cyan-600 dark:text-cyan-400"
-                        >
-                            .
-                        </motion.span>
+                        </div>
                     </h1>
 
                     <p className="max-w-2xl mx-auto mb-10 text-lg font-light leading-relaxed text-gray-600 md:text-2xl dark:text-gray-400">
