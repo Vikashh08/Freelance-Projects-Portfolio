@@ -30,7 +30,7 @@ const skills = [
         ],
     },
     {
-        category: "Full Stack Development",
+        category: "Web Technologies",
         icon: FaDatabase,
         items: [
             { name: "React", icon: SiReact, color: "#61DAFB" },
